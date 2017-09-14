@@ -1,7 +1,6 @@
 
 // Display the page with the start button
 $(document).ready(function () {
-
 });
 
 
