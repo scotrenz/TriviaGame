@@ -13,3 +13,7 @@ body.page-1 {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+.col {
+	color: white;
+}
