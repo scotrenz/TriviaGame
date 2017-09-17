@@ -206,59 +206,59 @@ $(document).ready(function () {
 	}
 
 addArray();
-	// Create a table with all the placecards of the points 
-	// function placecardTable() {
-	// 	// Set variable pcTable to the HTML table id placecards
-	// 	var pcTable = document.getElementById("placecards")
-	// 	// Create table element
-	// 	var table = document.createElement("table")
-	// 	// Create tbody element
-	// 	var tableBody = document.createElement("tbody")
+	//Create a table with all the placecards of the points 
+	function placecardTable() {
+		// Set variable pcTable to the HTML table id placecards
+		var pcTable = document.getElementById("placecards")
+		// Create table element
+		var table = document.createElement("table")
+		// Create tbody element
+		var tableBody = document.createElement("tbody")
 
-	// 	// Add table body to the table
-	// 	table.appendChild(tableBody);
+		// Add table body to the table
+		table.appendChild(tableBody);
 
-	// 	// Create array for question categories
-	// 	var category = ["Category A", "Category B", "Category C", "Category D", "Category E"];
+		// Create array for question categories
+		var category = ["Category A", "Category B", "Category C", "Category D", "Category E"];
 
-	// 	// Create element for table row and set it equal to variable tr
-	// 	var tr = document.createElement("TR");
+		// Create element for table row and set it equal to variable tr
+		var tr = document.createElement("TR");
 
-	// 	// Add table rows to table body
-	// 	tableBody.appendChild(tr);
+		// Add table rows to table body
+		tableBody.appendChild(tr);
 
-	// 	// Add the question categories to the table heading
-	// 	for (i = 0; i < category.length; i++) {
-	// 		var th = document.createElement("TH")
-	// 		th.appendChild(document.createTextNode(category[i]));
-	// 		tr.appendChild(th);
-	// 	}
+		// Add the question categories to the table heading
+		for (i = 0; i < category.length; i++) {
+			var th = document.createElement("TH")
+			th.appendChild(document.createTextNode(category[i]));
+			tr.appendChild(th);
+		}
 
-	// 	// Add the Card Columns to the table
-	// 	for (i = 0; i < cardColumn.length; i++) {
-	// 		var tr = document.createElement("TR");
-	// 		for (j = 0; j < cardColumn[i].length; j++) {
-	// 			var td = document.createElement("TD")
-	// 			td.appendChild(document.createTextNode(cardColumn[i][j]));
-	// 			tr.appendChild(td);
-	// 		}
-	// 		tableBody.appendChild(tr);
-	// 	}
+		// Add the Card Columns to the table
+		for (i = 0; i < cardColumn.length; i++) {
+			var tr = document.createElement("TR");
+			for (j = 0; j < cardColumn[i].length; j++) {
+				var td = document.createElement("TD")
+				td.appendChild(document.createTextNode(cardColumn[i][j]));
+				tr.appendChild(td);
+			}
+			tableBody.appendChild(tr);
+		}
 
-	// 	// Add the table to pcTable
-	// 	pcTable.appendChild(table);
-	// };
+		// Add the table to pcTable
+		pcTable.appendChild(table);
+	};
 
-	// placecardTable();
+	placecardTable();
 	
-	// // Add class to each category in the table correspond to category questions
-	// function addClass() {
-	// 	for (i = 1; i < 6; i++) {
-	// 		$("td:nth-child(" + i + ")").addClass("category-" + i);
-	// 	}
-	// }
+	// Add class to each category in the table correspond to category questions
+	function addClass() {
+		for (i = 1; i < 6; i++) {
+			$("td:nth-child(" + i + ")").addClass("category-" + i);
+		}
+	}
 
-	// addClass();
+	addClass();
 
 	// function chooseQuestion() {
 

@@ -14,6 +14,20 @@ body.page-1 {
 	background-size: cover;
 }
 
+.container {
+	width: 100%;
+}
+
 .col {
 	color: white;
 }
+
+.fullscreen{
+    z-index: 9999; 
+    position: fixed; 
+    font-size: 5rem;
+    text-align: center;
+    background-color: blue;
+    top: 0; 
+    left: 0; 
+ }
