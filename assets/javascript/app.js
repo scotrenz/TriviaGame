@@ -276,14 +276,14 @@ $(document).ready(function () {
 
             // Set a counter to go through category question. 
             counter = (counter + 1) % category.length;
-            var cellName = $(element).attr("class").split("-").pop();
-            console.log(cellName);
-            console.log(counter);
 
-            // Set variable for the answers array
+            // Get the cell name of the on click
+            var cellName = $(element).attr("class").split("-").pop();
+
+            // Set variable for the answers array based on the cell name
             var answers = category[cellName].answers;
 
-            // Set variable for the chosen question
+            // Set variable for the chosen question based on the cell name
             var questions = category[cellName].question;
 
             // Create a div for the full page question/answer
@@ -303,7 +303,7 @@ $(document).ready(function () {
             // Create a button element for all the answers and add to the page
             for (i = 0; i < category[counter].answers.length; i++) {
                 var btn = document.createElement("button");
-                var inside = document.createTextNode(category[counter].answers[i]);
+                var inside = document.createTextNode(category[cellName].answers[i]);
                 btn.appendChild(inside);
                 questionanswer.appendChild(btn);
             }
@@ -314,52 +314,55 @@ $(document).ready(function () {
 
             
             // Create timeout variable
-            var timeout = category[counter].timeout;
-                console.log(timeout);
+            // var timeout = category[counter].timeout;
+            //     console.log(timeout);
 
-            setTimeout(function() {
-                element.innerHTML = timeout;
-            }, 1000);
+            // setTimeout(function() {
+            //     element.innerHTML = timeout;
+            // }, 1000);
 
-            // If the player takes too long, tell player the right answer and go back to game board
-            setTimeout(function() {
-                $(element).replaceWith("<div class='cell'></div>");
-                $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
-            }, 2000);
+            // // If the player takes too long, tell player the right answer and go back to game board
+            // setTimeout(function() {
+            //     $(element).replaceWith("<div class='cell'></div>");
+            //     $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
+            // }, 2000);
                
             winorlose(category[counter], this);      
 
         }
 
 
-    // function winorlose(category, element) {
-    //     // var newAns = category.answers.shuffle();
-    //     // console.log(category.answers);
-    //     // console.log(newAns);
+    function winorlose(category, element) {
+        // var newAns = category.answers.shuffle();
+        // console.log(category.answers);
+        // console.log(newAns);
 
-        
-    //     $("button").on("click", function() {
-    //         var playerAnswer = $(this).text();
-    //         console.log(playerAnswer);
+        for(i = 3; i >= 0; i--) {
+            button.appendChild(button.children[Math.random() * i | 0])
+        }
 
-    //         if (category.answers[0] === playerAnswer) {
+        $("button").on("click", function() {
+            var playerAnswer = $(this).text();
+            console.log(playerAnswer);
+
+            if (category.answers[0] === playerAnswer) {
                 
                 
-    //             console.log(category.answers[0]);
-    //             // Set variable for the chosen question
-    //             var correct = category.correct;
-    //             console.log(correct);
+                console.log(category.answers[0]);
+                // Set variable for the chosen question
+                var correct = category.correct;
+                console.log(correct);
 
-    //             // Add the questionanswer div to the page
-    //             // document.getElementsByClassName("cell").appendChild(correct);
+                // Add the questionanswer div to the page
+                // document.getElementsByClassName("cell").appendChild(correct);
 
-    //             // // Add question to the div
-    //             // questionanswer.appendChild(document.createTextNode(correct));
+                // // Add question to the div
+                // questionanswer.appendChild(document.createTextNode(correct));
 
 
-    //         }
-    //     });
-    // }
+            }
+        });
+    }
 
 
     function gameStart() {
