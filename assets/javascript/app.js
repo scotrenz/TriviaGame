@@ -11,6 +11,7 @@ $(document).ready(function () {
 	var c1 = [{
 	        question: "What is the weather like today?",
 	        answers: ["ANSWER", "Sunny", "Raining", "Windy"],
+            theanswer: "ANSWER",
 	        correct: "Answer is the right answer",
 	        wrong: "Sorry you're wrong",
 	        timeout: "You ran out of time."
@@ -18,6 +19,7 @@ $(document).ready(function () {
 	    {
 	        question: "What day is it?",
 	        answers: ["Monday", "Tuesday", "Answer 2.3", "Answer 2.4"],
+            theanswer: "Monday",
 	        correct: "Answer is the right answer",
 	        wrong: "Sorry you're wrong",
 	        timeout: "You ran out of time."
@@ -25,6 +27,7 @@ $(document).ready(function () {
 	    {
 	        question: "How are you?",
 	        answers: ["Good", "Answer 3.2", "Bad", "Answer 3.4"],
+            theanswer: "Bad",
 	        correct: "Answer is the right answer",
 	        wrong: "Sorry you're wrong",
 	        timeout: "You ran out of time."
@@ -32,6 +35,7 @@ $(document).ready(function () {
 	    {
 	        question: "What's up?",
 	        answers: ["Nothing", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+            theanswer: "Nothing",
 	        correct: "Answer is the right answer",
 	        wrong: "Sorry you're wrong",
 	        timeout: "You ran out of time."
@@ -39,7 +43,8 @@ $(document).ready(function () {
 	    {
 	        question: "What?",
 	        answers: ["YEs", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-	        correct: "Answer is the right answer",
+	        theanswer: "Answer 4.2",
+            correct: "Answer is the right answer",
 	        wrong: "Sorry you're wrong",
 	        timeout: "You ran out of time."
 	    }
@@ -50,6 +55,7 @@ $(document).ready(function () {
 	var c2 = [{
         question: "What is the weather like todayyyyy?",
         answers: ["Aeyyyy", "Sunny", "Raining", "Windy"],
+        theanswer: "Sunny",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -57,6 +63,7 @@ $(document).ready(function () {
     {
         question: "What is blue?",
         answers: ["Yellow", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
+        theanswer: "Answer 2.2",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -64,6 +71,7 @@ $(document).ready(function () {
     {
         question: "What color?",
         answers: ["Pink", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
+        theanswer: "Pink",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -71,6 +79,7 @@ $(document).ready(function () {
     {
         question: "Colr day today?",
         answers: ["Yessss", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -78,6 +87,7 @@ $(document).ready(function () {
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -87,6 +97,7 @@ $(document).ready(function () {
 	var c3 = [{
         question: "What Water?",
         answers: ["Bottled", "Sunny", "Raining", "Windy"],
+        theanswer: "Bottled",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -94,6 +105,7 @@ $(document).ready(function () {
     {
         question: "Water no more?",
         answers: ["H2o", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
+        theanswer: "H2o",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -101,6 +113,7 @@ $(document).ready(function () {
     {
         question: "Question3",
         answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
+        theanswer: "Answer 3.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -108,6 +121,7 @@ $(document).ready(function () {
     {
         question: "Water cup?",
         answers: ["plastic", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.4",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -115,6 +129,7 @@ $(document).ready(function () {
     {
         question: "MOOLS",
         answers: ["waters", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "waters",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -124,6 +139,7 @@ $(document).ready(function () {
 	var c4 = [{
         question: "q1?",
         answers: ["ANSWER", "Sunny", "Raining", "Windy"],
+        theanswer: "Windy",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -131,6 +147,7 @@ $(document).ready(function () {
     {
         question: "q2",
         answers: ["Answer 2.1", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
+        theanswer: "Answer 2.1",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -138,6 +155,7 @@ $(document).ready(function () {
     {
         question: "q3",
         answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
+        theanswer: "Answer 3.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -145,6 +163,7 @@ $(document).ready(function () {
     {
         question: "q4",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.2",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -152,6 +171,7 @@ $(document).ready(function () {
     {
         question: "q5",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.4",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -161,6 +181,7 @@ $(document).ready(function () {
 	var c5 = [{
         question: "What is the weather like today?",
         answers: ["eek", "Sunny", "Raining", "Windy"],
+        theanswer: "eek",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -168,6 +189,7 @@ $(document).ready(function () {
     {
         question: "Question2",
         answers: ["Aarggg", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
+        theanswer: "Answer 2.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -175,6 +197,7 @@ $(document).ready(function () {
     {
         question: "Question3",
         answers: ["arst", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
+        theanswer: "arst",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -182,6 +205,7 @@ $(document).ready(function () {
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -189,6 +213,7 @@ $(document).ready(function () {
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.3",
         correct: "Answer is the right answer",
         wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
@@ -280,8 +305,8 @@ $(document).ready(function () {
             // Get the cell name of the on click
             var cellName = $(element).attr("class").split("-").pop();
 
-            // Set variable for the answers array based on the cell name
-            var answers = category[cellName].answers;
+            // Set variable for the answers array based on the cell name and shuffle it
+            var answers = category[cellName].answers.shuffle();
 
             // Set variable for the chosen question based on the cell name
             var questions = category[cellName].question;
@@ -312,7 +337,6 @@ $(document).ready(function () {
             // // Add full screen class to the chosen placecard
             $(element).addClass("fullscreen").css({"width":width, "height":height});
 
-            
             // Create timeout variable
             // var timeout = category[counter].timeout;
             //     console.log(timeout);
@@ -327,31 +351,39 @@ $(document).ready(function () {
             //     $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
             // }, 2000);
                
-            winorlose(category[counter], this);      
+            winorlose(element);      
 
         }
 
 
-    function winorlose(category, element) {
-        // var newAns = category.answers.shuffle();
-        // console.log(category.answers);
-        // console.log(newAns);
-
-        for(i = 3; i >= 0; i--) {
-            button.appendChild(button.children[Math.random() * i | 0])
-        }
+    function winorlose(e) {
 
         $("button").on("click", function() {
+            // Set variable for player's answer
             var playerAnswer = $(this).text();
-            console.log(playerAnswer);
 
-            if (category.answers[0] === playerAnswer) {
+            // Get the 2nd class of the element parameter 
+            var categoryName = $(e).attr('class').split(' ')[1];
+
+            // Get the 3rd class of the element parameter
+            var cName = $(e).attr('class').split(' ')[2];
+
+            // Store the last character of the category name in cell
+            var cat = categoryName[categoryName.length -1];
+
+            // Store the last character of the cell name in pop
+            var cell = cName[cName.length -1];
+
+            // Create the check
+            var check = "c" + cat + "[" + cell + "]" + ".theanswer";
+
+            if (eval(check) === playerAnswer) {
+                console.log("yay");
+                }
                 
-                
-                console.log(category.answers[0]);
                 // Set variable for the chosen question
-                var correct = category.correct;
-                console.log(correct);
+                // var correct = category.correct;
+                // console.log(correct);
 
                 // Add the questionanswer div to the page
                 // document.getElementsByClassName("cell").appendChild(correct);
@@ -360,7 +392,7 @@ $(document).ready(function () {
                 // questionanswer.appendChild(document.createTextNode(correct));
 
 
-            }
+           
         });
     }
 
