@@ -2,95 +2,64 @@ $(document).ready(function () {
 	var counter = 0;
     var width = $(window).width();
     var height = $(window).height();
-
+    var wincount = 0;
+    var clicks = 1;
 
     // Create array for question categories
     var category = ["Category A", "Category B", "Category C", "Category D", "Category E"];
 
 	// Array with all the questions and answers
 	var c1 = [{
-	        question: "What is the weather like today?",
-	        answers: ["ANSWER", "Sunny", "Raining", "Windy"],
-            theanswer: "ANSWER",
-	        correct: "Answer is the right answer",
-	        wrong: "Sorry you're wrong",
-	        timeout: "You ran out of time."
-	    },
-	    {
-	        question: "What day is it?",
-	        answers: ["Monday", "Tuesday", "Answer 2.3", "Answer 2.4"],
-            theanswer: "Monday",
-	        correct: "Answer is the right answer",
-	        wrong: "Sorry you're wrong",
-	        timeout: "You ran out of time."
-	    },
-	    {
-	        question: "How are you?",
-	        answers: ["Good", "Answer 3.2", "Bad", "Answer 3.4"],
-            theanswer: "Bad",
-	        correct: "Answer is the right answer",
-	        wrong: "Sorry you're wrong",
-	        timeout: "You ran out of time."
-	    },
-	    {
-	        question: "What's up?",
-	        answers: ["Nothing", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-            theanswer: "Nothing",
-	        correct: "Answer is the right answer",
-	        wrong: "Sorry you're wrong",
-	        timeout: "You ran out of time."
-	    },
-	    {
-	        question: "What?",
-	        answers: ["YEs", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-	        theanswer: "Answer 4.2",
-            correct: "Answer is the right answer",
-	        wrong: "Sorry you're wrong",
-	        timeout: "You ran out of time."
-	    }
+        question: "What is the weather like today?",
+        answers: ["ANSWER", "Sunny", "Raining", "Windy"],
+        theanswer: "ANSWER",
+    },
+    {
+        question: "What day is it?",
+        answers: ["Monday", "Tuesday", "Answer 2.3", "Answer 2.4"],
+        theanswer: "Monday",
+    },
+    {
+        question: "How are you?",
+        answers: ["Good", "Answer 3.2", "Bad", "Answer 3.4"],
+        theanswer: "Bad",
+    },
+    {
+        question: "What's up?",
+        answers: ["Nothing", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Nothing",
+    },
+    {
+        question: "What?",
+        answers: ["YEs", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
+        theanswer: "Answer 4.2",
+    }
 	];
-
-    console.log(c1[0].question);
 
 	var c2 = [{
         question: "What is the weather like todayyyyy?",
         answers: ["Aeyyyy", "Sunny", "Raining", "Windy"],
         theanswer: "Sunny",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "What is blue?",
         answers: ["Yellow", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
         theanswer: "Answer 2.2",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "What color?",
         answers: ["Pink", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
         theanswer: "Pink",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Colr day today?",
         answers: ["Yessss", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     }
 	];
 
@@ -98,41 +67,26 @@ $(document).ready(function () {
         question: "What Water?",
         answers: ["Bottled", "Sunny", "Raining", "Windy"],
         theanswer: "Bottled",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Water no more?",
         answers: ["H2o", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
         theanswer: "H2o",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question3",
         answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
         theanswer: "Answer 3.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Water cup?",
         answers: ["plastic", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.4",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "MOOLS",
         answers: ["waters", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "waters",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     }
 	];
 
@@ -140,41 +94,27 @@ $(document).ready(function () {
         question: "q1?",
         answers: ["ANSWER", "Sunny", "Raining", "Windy"],
         theanswer: "Windy",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
         timeout: "You ran out of time."
     },
     {
         question: "q2",
         answers: ["Answer 2.1", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
         theanswer: "Answer 2.1",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "q3",
         answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
         theanswer: "Answer 3.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "q4",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.2",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "q5",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.4",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     }
 	];
 
@@ -182,44 +122,28 @@ $(document).ready(function () {
         question: "What is the weather like today?",
         answers: ["eek", "Sunny", "Raining", "Windy"],
         theanswer: "eek",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question2",
         answers: ["Aarggg", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
         theanswer: "Answer 2.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question3",
         answers: ["arst", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
         theanswer: "arst",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     },
     {
         question: "Question1",
         answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
         theanswer: "Answer 4.3",
-        correct: "Answer is the right answer",
-        wrong: "Sorry you're wrong",
-        timeout: "You ran out of time."
     }
 	];
-
 
     var cardColumn = [
         [200, 400, 600, 800, 1000]
@@ -243,13 +167,10 @@ $(document).ready(function () {
     //         $('<div class="col" />').text(cardColumn[i]).appendTo('row');
     //     }
     // }
+    // Set variable pcTable to the HTML table id placecards
+    var pcTable = document.getElementById("placecards");
 
-    function placecardTable() {
-        // Set variable pcTable to the HTML table id placecards
-        var pcTable = document.getElementById("placecards")
-
-        
-
+    function header() {
         // Create element for table row and set it equal to variable tr
         var header = document.createElement("div");
 
@@ -262,6 +183,10 @@ $(document).ready(function () {
             headerDiv.setAttribute("class", "col");
         }
         pcTable.appendChild(header);
+    }
+    header();
+
+    function placecardTable() {
 
         // Create a div column
         var column = document.createElement("div");
@@ -293,80 +218,60 @@ $(document).ready(function () {
     };
 
     placecardTable();
-
-    
  
     // When you click on a placecard, it reveals the question and answer
     function checkQuestion(category, element) {
 
-            // Set a counter to go through category question. 
-            counter = (counter + 1) % category.length;
+        // Set a counter to go through category question. 
+        counter = (counter + 1) % category.length;
 
-            // Get the cell name of the on click
-            var cellName = $(element).attr("class").split("-").pop();
+        // Get the cell name of the on click
+        var cellName = $(element).attr("class").split("-").pop();
 
-            // Set variable for the answers array based on the cell name and shuffle it
-            var answers = category[cellName].answers.shuffle();
+        // Set variable for the answers array based on the cell name and shuffle it
+        var answers = category[cellName].answers.shuffle();
 
-            // Set variable for the chosen question based on the cell name
-            var questions = category[cellName].question;
+        // Set variable for the chosen question based on the cell name
+        var questions = category[cellName].question;
 
-            // Create a div for the full page question/answer
-            var questionanswer = document.createElement("div");
+        // Create a div for the full page question/answer
+        var questionanswer = document.createElement("div");
 
-            // Set a class to style it
-            questionanswer.setAttribute("class", "fullpage");
+        // Set a class to style it
+        questionanswer.setAttribute("class", "fullpage");
 
-            // Add the questionanswer div to the page
-            element.appendChild(questionanswer);
+        // Add the questionanswer div to the page
+        element.appendChild(questionanswer);
 
-            console.log(element);
+        var cellDiv = element;
 
-            // Add question to the div
-            questionanswer.appendChild(document.createTextNode(questions));
+        // Add question to the div
+        questionanswer.appendChild(document.createTextNode(questions));
 
-            // Create a button element for all the answers and add to the page
-            for (i = 0; i < category[counter].answers.length; i++) {
-                var btn = document.createElement("button");
-                var inside = document.createTextNode(category[cellName].answers[i]);
-                btn.appendChild(inside);
-                questionanswer.appendChild(btn);
-            }
-            var currentWidth = $(element).width();
-            var currentHeight = $(element).height();
-            // // Add full screen class to the chosen placecard
-            $(element).addClass("fullscreen").css({"width":width, "height":height});
-
-            // Create timeout variable
-            // var timeout = category[counter].timeout;
-            //     console.log(timeout);
-
-            // setTimeout(function() {
-            //     element.innerHTML = timeout;
-            // }, 1000);
-
-            // // If the player takes too long, tell player the right answer and go back to game board
-            // setTimeout(function() {
-            //     $(element).replaceWith("<div class='cell'></div>");
-            //     $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
-            // }, 2000);
-               
-            winorlose(element);      
-
+        // Create a button element for all the answers and add to the page
+        for (i = 0; i < category[counter].answers.length; i++) {
+            var btn = document.createElement("button");
+            var inside = document.createTextNode(category[cellName].answers[i]);
+            btn.appendChild(inside);
+            questionanswer.appendChild(btn);
         }
+        var currentWidth = $(element).width();
+        var currentHeight = $(element).height();
+        // // Add full screen class to the chosen placecard
+        $(element).addClass("fullscreen").css({"width":width, "height":height});
+        
+        // Create timeout variable
+        var timeout = category[counter].timeout;   
 
+        winorlose(element);   
 
-    function winorlose(e) {
-
-        $("button").on("click", function() {
-            // Set variable for player's answer
-            var playerAnswer = $(this).text();
+        function winorlose(e) {
 
             // Get the 2nd class of the element parameter 
-            var categoryName = $(e).attr('class').split(' ')[1];
+            var categoryName = $(element).attr('class').split(' ')[1];
 
             // Get the 3rd class of the element parameter
-            var cName = $(e).attr('class').split(' ')[2];
+            var cName = $(element).attr('class').split(' ')[2];
 
             // Store the last character of the category name in cell
             var cat = categoryName[categoryName.length -1];
@@ -374,36 +279,69 @@ $(document).ready(function () {
             // Store the last character of the cell name in pop
             var cell = cName[cName.length -1];
 
-            // Create the check
-            var check = "c" + cat + "[" + cell + "]" + ".theanswer";
+            // The category of the chosen question
+            var category = "c" + cat;
 
-            if (eval(check) === playerAnswer) {
-                console.log("yay");
-                }
+            // The cell number of chosen question
+            var cellcheck = "[" + cell + "]";
+
+            // Get the answer of the question
+            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer")
+
+            setTimeout(function() {
                 
-                // Set variable for the chosen question
-                // var correct = category.correct;
-                // console.log(correct);
+                element.innerHTML = "You're out of time! The correct answer is " + check; 
+            }, 1000);
 
-                // Add the questionanswer div to the page
-                // document.getElementsByClassName("cell").appendChild(correct);
+            // If the player takes too long, tell player the right answer and go back to game board
+            setTimeout(function() {
+                clicks++;
+                $(element).replaceWith("<div class='cell'></div>");
+                $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
+            }, 1000);
 
-                // // Add question to the div
-                // questionanswer.appendChild(document.createTextNode(correct));
+            $("button").on("click", function() {
+                // Set variable for player's answer
+                var playerAnswer = $(this).text();
 
+                // If the answer equal the player's choice
+                if (check === playerAnswer) {
+                    // Up the wincount
+                    wincount++;
+                    // Add the wincount to the page
+                    document.getElementById("wincount").innerHTML = "Score: " + wincount;
 
-           
-        });
+                    // Add the win to the page
+                    cellDiv.innerHTML = check + " is correct!";
+
+                    // Timeout back to original placecard page
+                    setTimeout(function() {
+                        $(element).replaceWith("<div class='cell'></div>");
+                        $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
+                    }, 2000);
+                } else {
+                    cellDiv.innerHTML = "I'm sorry " + playerAnswer + " is incorrect.";
+                    // Timeout back to original placecard page
+                    setTimeout(function() {
+                        $(element).replaceWith("<div class='cell'></div>");
+                        $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
+                    }, 1000);
+                }
+            });
+
+            if (clicks === 25) {
+                restartGame();
+            };
+        } 
     }
 
 
     function gameStart() {
 
         $(".cell").one("click", function() {
-        var category = parseInt($(this).text());
-        var className = $(this).attr("class").split(" ")[1];
+            var category = parseInt($(this).text());
+            var className = $(this).attr("class").split(" ")[1];
 
-        console.log(className);
             if (className === "category1") {
                 checkQuestion(c1, this);
             } else if (className === "category2") {
@@ -412,11 +350,28 @@ $(document).ready(function () {
                 checkQuestion(c3, this);
             } else if (className === "category4") {
                 checkQuestion(c4, this);
-            } else if (className === "category5"){
+            } else if (className === "category5") {
                 checkQuestion(c5, this);
             };
         });
     };
     gameStart();
-    
+
+    function restartGame() {
+
+        // Add the win to the page
+        var restartButton = document.createElement("button");
+        restartButton.setAttribute("id", "restart");
+        var gameRestart = document.createTextNode("Restart Game!");
+        restartButton.appendChild(gameRestart);
+        document.body.appendChild(restartButton);
+
+        $("#restart").on("click", function() {
+            setTimeout(function() {
+                placecardTable();
+                gameStart();
+                $("#restart").hide();
+            }, 1000);
+        });
+    };
 });
