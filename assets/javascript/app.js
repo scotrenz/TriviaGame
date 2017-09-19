@@ -3,7 +3,7 @@ $(document).ready(function () {
     var width = $(window).width();
     var height = $(window).height();
     var wincount = 0;
-    var clicks = 1;
+    var clicks = 0;
     var audio = new Audio('../TriviaGame/assets/sounds/times-up.mp3');
 
     // Create array for question categories
@@ -164,6 +164,9 @@ $(document).ready(function () {
 
     var pcTable = document.getElementById("placecards");
 
+    // Add the wincount to the page
+                    document.getElementById("wincount").innerHTML = "Score: $" + wincount;
+
     function header() {
         // Create element for table row and set it equal to variable tr
         var header = document.createElement("div");
@@ -254,8 +257,14 @@ $(document).ready(function () {
         }
 
         // Get the current width and height to save for returning to the placecard page
-        var currentWidth = $(element).width();
-        var currentHeight = $(element).height();
+        
+        var currentWidth = $("div.cell").width() + "px";
+        var currentHeight = $("div.cell").height() + "px";
+    
+        console.log(currentWidth);
+        console.log(currentHeight);
+
+
 
         // // Add full screen class to the chosen placecard
         $(element).addClass("fullscreen").css({"width":width, "height":height});
@@ -300,15 +309,15 @@ $(document).ready(function () {
                     // Up the wincount
                     wincount += value;
 
-                    // Add the wincount to the page
-                    document.getElementById("wincount").innerHTML = "Score: $" + wincount;
+                    console.log(element);
+
+                    
                     // Add the win to the page
                     cellDiv.innerHTML = check + " is correct!";
-
+                    
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                        $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
                     }, 1000);
 
                 } else {
@@ -316,14 +325,13 @@ $(document).ready(function () {
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                        $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
                     }, 1000);
                 }
 
             });
 
             // If the player takes too long, tell player the right answer and go back to game board
-            setTimeout(function() {           
+            setTimeout(function() {   
                 element.innerHTML = "Time's Up! The correct answer is " + check;
                 var teststring = "Time's Up! The correct answer is " + check;
                 
@@ -335,14 +343,16 @@ $(document).ready(function () {
             }, 15000);
 
             setTimeout(function() {
-                clicks++;
                 $(element).replaceWith("<div class='cell'></div>");
-                $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
             }, 16500);
+
+            console.log(clicks);
 
             // If you hit 25 placecards turned over, restart the game
             if (clicks === 25) {
                 restartGame();
+                $("#timer").get(0).pause();
+                $("#timer").get(0).currentTime = 0;
             };
         } 
     }
@@ -352,6 +362,7 @@ $(document).ready(function () {
         // Set so that you click once on the placecards 
         $(".cell").one("click", function() {
             $("#timer").get(0).play();
+            clicks++; 
             // Set category of the chosen question
             var category = parseInt($(this).text());
 
@@ -376,7 +387,8 @@ $(document).ready(function () {
     gameStart();
 
     function restartGame() {
-
+        // Delete row dollar
+        $(".dollar").remove();
         // Create restart button
         var restartButton = document.createElement("button");
         // Set an ID for the restart button

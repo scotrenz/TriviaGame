@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: 'SD Jeopardy Regular';
-  src: url("gyparody.heavy.ttf") format("truetype");
+	font-family: 'SD Jeopardy Regular';
+	src: url("gyparody.heavy.ttf") format("truetype");
 }
 
 /*Body*/
@@ -24,16 +24,11 @@ body.page-0 {
 }
 
 body.page-1 {
-	background-color: #121381;
+	background-color: #070cec;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-}
-
-.container {
-	margin: 0;
-	padding: 0;
 }
 
 /*Placecards*/
@@ -44,15 +39,17 @@ body.page-1 {
 
 /*Cell*/
 div.dollar div.cell {
+	width: 100%;
 	color: #d5a04f;
+	height: 7rem;
 	text-shadow: 5px 5px black;
 	cursor: pointer; 
 	cursor: hand; 
 }
 
-div.cell:hover {
-	font-size: 3.8rem;
-}
+/*div.cell:hover {
+	
+}*/
 
 .col {
 	color: white;
@@ -64,6 +61,8 @@ div.cell:hover {
 }
 
 div.cell {
+	width: 100%;
+	height: 100%;
 	font-size: 3.5rem;
 	text-align: center;
 	vertical-align: middle;
@@ -76,7 +75,7 @@ button {
 	display: block;
 	text-transform: uppercase;
 	margin-bottom: 1rem;
-	background-color: #121381;
+	background-color: #070cec;
 	border: none;
 	color: white;
 	text-shadow: 5px 5px black;
@@ -102,7 +101,7 @@ button:hover {
     color: white;
     font-size: 5rem;
     text-align: center;
-    background-color: #121381;
+    background-color: #070cec;
     top: 0; 
     left: 0; 
     transition-timing-function: ease-in-out;
