@@ -161,13 +161,6 @@ $(document).ready(function () {
         return this;
     }  
 
-    // function addArray() {
-    //     var question = "";
-    //     for (i = 0; i < cardColumn.length; i++) {
-    //         $('<div class="col" />').text(cardColumn[i]).appendTo('row');
-    //     }
-    // }
-    // Set variable pcTable to the HTML table id placecards
     var pcTable = document.getElementById("placecards");
 
     function header() {
@@ -180,8 +173,10 @@ $(document).ready(function () {
             headerDiv.appendChild(document.createTextNode(category[i]));
             header.appendChild(headerDiv);
             header.setAttribute("class", "row");
+            header.setAttribute("id", "header");
             headerDiv.setAttribute("class", "col");
         }
+        // Add header to page
         pcTable.appendChild(header);
     }
     header();
@@ -195,7 +190,7 @@ $(document).ready(function () {
         pcTable.appendChild(column);
 
         // Set the column as a row
-        column.setAttribute("class", "row");
+        column.setAttribute("class", "row dollar");
 
         // Add the Card Columns to the table
         for (h = 1; h < 6; h++) {
@@ -209,7 +204,7 @@ $(document).ready(function () {
                 for (j = 0; j < cardColumn[i].length; j++) {
                     var gameCell = document.createElement("div")
                     gameCell.setAttribute("class", "cell category" + h + " cell-number-" + j);
-                    gameCell.appendChild(document.createTextNode(cardColumn[i][j]));
+                    gameCell.appendChild(document.createTextNode("$" + cardColumn[i][j]));
                     gameColumn.appendChild(gameCell);
                     column.appendChild(gameColumn);
                 }
@@ -243,6 +238,7 @@ $(document).ready(function () {
         // Add the questionanswer div to the page
         element.appendChild(questionanswer);
 
+        // Set this
         var cellDiv = element;
 
         // Add question to the div
@@ -255,8 +251,11 @@ $(document).ready(function () {
             btn.appendChild(inside);
             questionanswer.appendChild(btn);
         }
+
+        // Get the current width and height to save for returning to the placecard page
         var currentWidth = $(element).width();
         var currentHeight = $(element).height();
+
         // // Add full screen class to the chosen placecard
         $(element).addClass("fullscreen").css({"width":width, "height":height});
         
@@ -266,7 +265,6 @@ $(document).ready(function () {
         winorlose(element);   
 
         function winorlose(e) {
-
             // Get the 2nd class of the element parameter 
             var categoryName = $(element).attr('class').split(' ')[1];
 
@@ -287,13 +285,12 @@ $(document).ready(function () {
 
             // Get the answer of the question
             var check = eval("c" + cat + "[" + cell + "]" + ".theanswer")
-
+            
+            // If the player takes too long, tell player the right answer and go back to game board
             setTimeout(function() {
-                
                 element.innerHTML = "You're out of time! The correct answer is " + check; 
             }, 1000);
 
-            // If the player takes too long, tell player the right answer and go back to game board
             setTimeout(function() {
                 clicks++;
                 $(element).replaceWith("<div class='cell'></div>");
@@ -306,10 +303,14 @@ $(document).ready(function () {
 
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
+
+                    var value = parseInt($("div.cell").text().slice(1));
+
                     // Up the wincount
-                    wincount++;
+                    wincount += value;
+
                     // Add the wincount to the page
-                    document.getElementById("wincount").innerHTML = "Score: " + wincount;
+                    document.getElementById("wincount").innerHTML = "Score: $" + wincount;
 
                     // Add the win to the page
                     cellDiv.innerHTML = check + " is correct!";
@@ -328,7 +329,7 @@ $(document).ready(function () {
                     }, 1000);
                 }
             });
-
+            // If you hit 25 placecards turned over, restart the game
             if (clicks === 25) {
                 restartGame();
             };
@@ -337,11 +338,15 @@ $(document).ready(function () {
 
 
     function gameStart() {
-
+        // Set so that you click once on the placecards 
         $(".cell").one("click", function() {
+            // Set category of the chosen question
             var category = parseInt($(this).text());
+
+            // Set class name of question chosen
             var className = $(this).attr("class").split(" ")[1];
 
+            // Get the question
             if (className === "category1") {
                 checkQuestion(c1, this);
             } else if (className === "category2") {
@@ -355,21 +360,29 @@ $(document).ready(function () {
             };
         });
     };
+
     gameStart();
 
     function restartGame() {
 
-        // Add the win to the page
+        // Create restart button
         var restartButton = document.createElement("button");
+        // Set an ID for the restart button
         restartButton.setAttribute("id", "restart");
+        // Set text for button
         var gameRestart = document.createTextNode("Restart Game!");
+        // Add text to button
         restartButton.appendChild(gameRestart);
+        // Add button to page
         document.body.appendChild(restartButton);
 
+        // On clicking the restart button, reset the questions and values to placecard
         $("#restart").on("click", function() {
             setTimeout(function() {
                 placecardTable();
                 gameStart();
+                wincount = 0;
+                document.getElementById("wincount").innerHTML = "Score: $" + wincount;
                 $("#restart").hide();
             }, 1000);
         });

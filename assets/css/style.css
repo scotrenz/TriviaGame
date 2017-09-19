@@ -1,3 +1,20 @@
+/*Font*/
+@font-face {
+    font-family: swiss911;
+    src: url("Swiss911BT-Compressed.otf") format("opentype");
+}
+
+@font-face {
+	font-family: korinna;
+	src: url("Korinna-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SD Jeopardy Regular';
+  src: url("gyparody.heavy.ttf") format("truetype");
+}
+
+/*Body*/
 body.page-0 {
 	background: url("../images/jeopardy.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -7,39 +24,108 @@ body.page-0 {
 }
 
 body.page-1 {
-	background-color: blue;
+	background-color: #0f1481;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+.container {
+	margin: 0;
+	padding: 0;
+}
+
+/*Placecards*/
 .row {
 	flex-wrap: nowrap;
+	width: 113%;
+}
+
+/*Cell*/
+div.dollar div.cell {
+	color: #d5a04f;
+	text-shadow: 3px 3px black;
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+div.cell:hover {
+	font-size: 3.8rem;
 }
 
 .col {
 	color: white;
-	width: 20%;
-	font-size: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 2.15rem;
+	font-family: swiss911;
+	margin: 1rem;
 }
 
 div.cell {
-	width: 20%;
-	height: 40%;
-	font-size: 10px;
+	font-size: 3.5rem;
 	text-align: center;
 	vertical-align: middle;
-}
-button {
-	display: block;
+	cursor: pointer; 
+	cursor: hand; 
 }
 
+/*Button*/
+button {
+	display: block;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	background-color: #0f1481;
+	border: none;
+	color: white;
+	text-shadow: 3px 3px black;
+	left: 0;
+	right: 0;
+	margin: auto;
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+button:first-child {
+	margin-top: 5rem;
+}
+
+button:hover {
+	font-size: 3.7rem;
+}
+
+/*Full Screen*/
 .fullscreen{
     z-index: 9999; 
     position: fixed; 
+    color: white;
     font-size: 5rem;
     text-align: center;
-    background-color: blue;
+    background-color: #0f1481;
     top: 0; 
     left: 0; 
+    transition-timing-function: ease-in-out;
  }
+
+ .fullpage {
+ 	font-family: korinna;
+ 	color: white;
+ 	text-transform: uppercase;
+ 	transition-timing-function: ease-in-out;
+ }
+
+ /*Header*/
+#header {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 3px 3px black;
+}
+
+/*Wincount*/
+#wincount {
+	font-family: SD Jeopardy Regular;
+	color: white;
+	text-align: center;
+	font-size: 3rem;
+}
