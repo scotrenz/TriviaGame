@@ -95,10 +95,6 @@ button:hover {
 	font-family: SD Jeopardy Regular;
 }
 
-#restart:hover {
-	font-size: 3.5.rem;
-}
-
 /*Full Screen*/
 .fullscreen{
     z-index: 9999; 

@@ -258,11 +258,6 @@ $(document).ready(function () {
         
         var currentWidth = $("div.cell").width() + "px";
         var currentHeight = $("div.cell").height() + "px";
-    
-        console.log(currentWidth);
-        console.log(currentHeight);
-
-
 
         // // Add full screen class to the chosen placecard
         $(element).addClass("fullscreen").css({"width":width, "height":height});
@@ -270,9 +265,8 @@ $(document).ready(function () {
         // Create timeout variable
         var timeout = category[counter].timeout;  
 
-        winorlose(element);   
+        winorlose();   
 
-        function winorlose(e) {
             // Get the 2nd class of the element parameter 
             var categoryName = $(element).attr('class').split(' ')[1];
 
@@ -292,14 +286,16 @@ $(document).ready(function () {
             var cellcheck = "[" + cell + "]";
 
             // Get the answer of the question
-            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer")        
+            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer");       
 
+            function winorlose() {
             $("button").on("click", function() {
                 $("#timer").get(0).pause();
                 $("#timer").get(0).currentTime = 0;
 
                 // Set variable for player's answer
                 var playerAnswer = $(this).text();
+
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
                     var value = parseInt($("div.cell").text().slice(1));
@@ -347,13 +343,13 @@ $(document).ready(function () {
                 $(element).replaceWith("<div class='cell'></div>");
             }, 16500);
 
-            console.log(clicks);
 
             // If you hit 25 placecards turned over, restart the game
             if (clicks === 25) {
-                restartGame();
-                $("#timer").get(0).pause();
-                $("#timer").get(0).currentTime = 0;
+                setTimeout(function() {
+                    $(element).replaceWith("<div class='cell'></div>");
+                    restartGame();
+                }, 10000);
             };
         } 
     }
