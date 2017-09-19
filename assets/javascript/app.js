@@ -4,6 +4,7 @@ $(document).ready(function () {
     var height = $(window).height();
     var wincount = 0;
     var clicks = 1;
+    var audio = new Audio('../TriviaGame/assets/sounds/times-up.mp3');
 
     // Create array for question categories
     var category = ["Category A", "Category B", "Category C", "Category D", "Category E"];
@@ -260,7 +261,7 @@ $(document).ready(function () {
         $(element).addClass("fullscreen").css({"width":width, "height":height});
         
         // Create timeout variable
-        var timeout = category[counter].timeout;   
+        var timeout = category[counter].timeout;  
 
         winorlose(element);   
 
@@ -284,26 +285,16 @@ $(document).ready(function () {
             var cellcheck = "[" + cell + "]";
 
             // Get the answer of the question
-            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer")
-            
-            // If the player takes too long, tell player the right answer and go back to game board
-            setTimeout(function() {
-                element.innerHTML = "You're out of time! The correct answer is " + check; 
-            }, 1000);
-
-            setTimeout(function() {
-                clicks++;
-                $(element).replaceWith("<div class='cell'></div>");
-                $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
-            }, 1000);
+            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer")        
 
             $("button").on("click", function() {
+                $("#timer").get(0).pause();
+                $("#timer").get(0).currentTime = 0;
+
                 // Set variable for player's answer
                 var playerAnswer = $(this).text();
-
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
-
                     var value = parseInt($("div.cell").text().slice(1));
 
                     // Up the wincount
@@ -311,7 +302,6 @@ $(document).ready(function () {
 
                     // Add the wincount to the page
                     document.getElementById("wincount").innerHTML = "Score: $" + wincount;
-
                     // Add the win to the page
                     cellDiv.innerHTML = check + " is correct!";
 
@@ -319,7 +309,8 @@ $(document).ready(function () {
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
                         $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
-                    }, 2000);
+                    }, 1000);
+
                 } else {
                     cellDiv.innerHTML = "I'm sorry " + playerAnswer + " is incorrect.";
                     // Timeout back to original placecard page
@@ -328,7 +319,27 @@ $(document).ready(function () {
                         $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
                     }, 1000);
                 }
+
             });
+
+            // If the player takes too long, tell player the right answer and go back to game board
+            setTimeout(function() {           
+                element.innerHTML = "Time's Up! The correct answer is " + check;
+                var teststring = "Time's Up! The correct answer is " + check;
+                
+                // Play times up sound only when the Time's Up message is shown
+                if ($("div.cell").text().indexOf(teststring) > -1)
+                {
+                    audio.play();
+                }
+            }, 15000);
+
+            setTimeout(function() {
+                clicks++;
+                $(element).replaceWith("<div class='cell'></div>");
+                $(element).removeClass("fullscreen").css({"width":currentWidth, "height":currentHeight});
+            }, 16500);
+
             // If you hit 25 placecards turned over, restart the game
             if (clicks === 25) {
                 restartGame();
@@ -340,6 +351,7 @@ $(document).ready(function () {
     function gameStart() {
         // Set so that you click once on the placecards 
         $(".cell").one("click", function() {
+            $("#timer").get(0).play();
             // Set category of the chosen question
             var category = parseInt($(this).text());
 
