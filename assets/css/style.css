@@ -38,18 +38,23 @@ body.page-1 {
 }
 
 /*Cell*/
+
 div.dollar div.cell {
 	width: 100%;
+	height: 100%;
+	font-size: 3.5rem;
+	text-align: center;
+	vertical-align: middle;
 	color: #d5a04f;
-	height: 7rem;
+	height: 6.5rem;
 	text-shadow: 5px 5px black;
 	cursor: pointer; 
 	cursor: hand; 
 }
 
-/*div.cell:hover {
-	
-}*/
+div.dollar div.cell:hover {
+	color: white;
+}
 
 .col {
 	color: white;
@@ -58,16 +63,6 @@ div.dollar div.cell {
 	font-size: 2.1rem;
 	font-family: swiss911;
 	margin: 1rem;
-}
-
-div.cell {
-	width: 100%;
-	height: 100%;
-	font-size: 3.5rem;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer; 
-	cursor: hand; 
 }
 
 /*Button*/
@@ -92,6 +87,16 @@ button:first-child {
 
 button:hover {
 	font-size: 3.7rem;
+}
+
+#restart {
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-family: SD Jeopardy Regular;
+}
+
+#restart:hover {
+	font-size: 3.5.rem;
 }
 
 /*Full Screen*/

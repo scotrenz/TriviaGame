@@ -164,9 +164,7 @@ $(document).ready(function () {
 
     var pcTable = document.getElementById("placecards");
 
-    // Add the wincount to the page
-                    document.getElementById("wincount").innerHTML = "Score: $" + wincount;
-
+    
     function header() {
         // Create element for table row and set it equal to variable tr
         var header = document.createElement("div");
@@ -305,9 +303,12 @@ $(document).ready(function () {
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
                     var value = parseInt($("div.cell").text().slice(1));
-
+                    console.log(value);
                     // Up the wincount
                     wincount += value;
+
+                    // Add the wincount to the page
+                    document.getElementById("wincount").innerHTML = "Score: $" + wincount;
 
                     console.log(element);
 
