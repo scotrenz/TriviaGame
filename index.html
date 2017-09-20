@@ -9,8 +9,13 @@
 	<script src="assets/javascript/jquery-3.2.1.min.js"></script>
 </head>
 <body class="page-0">
-	<div id="start">
-		<a href="game.html">Start Game!</a>
-	</div>
+<!-- 	<div class="stars"></div>
+ -->	<button id="button"><a href="game.html">Start Game!</a></button>
+	<audio id="intro" preload="auto">
+		<source src="assets/sounds/jeopardy-intro.mp3"></source>
+	</audio>
+	<script>
+		$("#intro").get(0).play();
+	</script>
 </body>
 </html>

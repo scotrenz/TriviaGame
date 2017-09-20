@@ -7,142 +7,141 @@ $(document).ready(function () {
     var audio = new Audio('../TriviaGame/assets/sounds/times-up.mp3');
 
     // Create array for question categories
-    var category = ["Category A", "Category B", "Category C", "Category D", "Category E"];
+    var category = ["The Movies", "Capitals", "History", "Food", "Sports"];
 
 	// Array with all the questions and answers
 	var c1 = [{
-        question: "What is the weather like today?",
-        answers: ["ANSWER", "Sunny", "Raining", "Windy"],
-        theanswer: "ANSWER",
+        question: 'He played Aragon in the "Lord of the Rings" movies',
+        answers: ["Who is Viggo Mortensen?", "Who is Orlando Bloom?", "Who is Elijah Wood?", "Who is Ian McKellen?"],
+        theanswer: "Who is Viggo Mortensen?"
     },
     {
-        question: "What day is it?",
-        answers: ["Monday", "Tuesday", "Answer 2.3", "Answer 2.4"],
-        theanswer: "Monday",
+        question: "Maggie Gyllenhaal took over the role of Rachel Dawes in this 2008 Batman film",
+        answers: ["What is The Dark Knight?", "What is The Dark Knight Rises?", "What is Batman vs Superman?", "What is Batman Begins?"],
+        theanswer: "What is The Dark Knight?"
     },
     {
-        question: "How are you?",
-        answers: ["Good", "Answer 3.2", "Bad", "Answer 3.4"],
-        theanswer: "Bad",
+        question: 'It was double trouble for this martial arts star playing twins in "Twin Dragons"',
+        answers: ["Who is Jackie Chan?", "Who is Tony Ja?", "Who is Jet Li?", "Who is Bruce Lee?"],
+        theanswer: "Who is Jackie Chan?"
     },
     {
-        question: "What's up?",
-        answers: ["Nothing", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Nothing",
+        question: 'In 1987 this actress won an Oscar for her film debut, "Children of A Lesser God"',
+        answers: ["Who is Marlee Matlin?", "Who is Piper Laurie", "Who is Dianne Wiest?", "Who is Anjelica Huston?"],
+        theanswer: "Who is Marlee Matlin?"
     },
     {
-        question: "What?",
-        answers: ["YEs", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.2",
+        question: "Martin Scorsese directed this 2010 film set at an isolated asylum for the criminally insane",
+        answers: ["What is Shutter Island?", "What is Girl, Interrupted?", "What is Silence?", "What is The Haunting?"],
+        theanswer: "What is Shutter Island?"
     }
 	];
 
 	var c2 = [{
-        question: "What is the weather like todayyyyy?",
-        answers: ["Aeyyyy", "Sunny", "Raining", "Windy"],
-        theanswer: "Sunny",
+        question: 'Calcutta was once the capital of India; this "New" city was made the capital in 1931',
+        answers: ["What is New Delhi?", "What is Bombay?", "What is Mumbai?", "What is Bangalore?"],
+        theanswer: "What is New Delhi?"
     },
     {
-        question: "What is blue?",
-        answers: ["Yellow", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
-        theanswer: "Answer 2.2",
+        question: "It's the northernmost capital city in mainland North America",
+        answers: ["What is Ottawa?", "What is Toronto?", "What is Vancouver?", "What is New York City?"],
+        theanswer: "What is Ottawa?"
     },
     {
-        question: "What color?",
-        answers: ["Pink", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
-        theanswer: "Pink",
+        question: 'In Mandarin, this city\'s name means "northern capital"',
+        answers: ["What is Beijing?", "What is Shanghai?", "What is Tianjin?", "What is Guangzhou?"],
+        theanswer: "What is Beijing?"
     },
     {
-        question: "Colr day today?",
-        answers: ["Yessss", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.3",
+        question: "Key West, Florida is only about 100 miles away from this foreign capital",
+        answers: ["What is Havana, Cuba?", "What is San Juan, Puerto Rico?", "What is Kingston, Jamaica?", "What is Nassau, Bahamas?"],
+        theanswer: "What is Havana, Cuba?"
     },
     {
-        question: "Question1",
-        answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.3",
+        question: "Edvard Munch bequeathed his works of art to this Norwegian capital, which built a museum to display them",
+        answers: ["What is Oslo?", "What is Stockholm?", "What is Copenhagen?", "What is Helsinki?"],
+        theanswer: "What is Oslo?"
     }
 	];
 
 	var c3 = [{
-        question: "What Water?",
-        answers: ["Bottled", "Sunny", "Raining", "Windy"],
-        theanswer: "Bottled",
+        question: "She was the mother of England's Queen Elizabeth I",
+        answers: ["Who is Anne Boleyn?", "Who is Empress Matilda?", "Who is Mary II of England?", "Who is Emma of Normandy?"],
+        theanswer: "Who is Anne Boleyn?",
     },
     {
-        question: "Water no more?",
-        answers: ["H2o", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
-        theanswer: "H2o",
+        question: '"Black Thursday" happened on Oct. 24 of this year; 5 days later, share prices had fallen 80%',
+        answers: ["What is 1929?", "What is 1989?", "What is 2008?", "What is 1912?"],
+        theanswer: "What is 1929?",
     },
     {
-        question: "Question3",
-        answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
-        theanswer: "Answer 3.3",
+        question: "When he went to Europe in 1971, he became the first reigning Japanese monarch to travel abroad",
+        answers: ["Who is Hirohito?", "Who is Prince Naruhito?", "Who is Emperor Jimmu?", "Who is Akihito?"],
+        theanswer: "Who is Hirohito?",
     },
     {
-        question: "Water cup?",
-        answers: ["plastic", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.4",
+        question: "From 1815 to 1861 this principality on the Riviera was under the protection of Sardinia",
+        answers: ["What is Monaco?", "What is Nice?", "What is Cannes?", "What is Cinque Terre?"],
+        theanswer: "What is Monaco?",
     },
     {
-        question: "MOOLS",
-        answers: ["waters", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "waters",
+        question: "Elizabeth Petrovna, the daughter of this czar, became empress of Russia in 1741",
+        answers: ["Who is Peter the Great?", "Who is Vladimir Lenin?", "Who is George V?", "Who is Grigori Rasputin?"],
+        theanswer: "Who is Peter the Great?",
     }
 	];
 
 	var c4 = [{
-        question: "q1?",
-        answers: ["ANSWER", "Sunny", "Raining", "Windy"],
-        theanswer: "Windy",
-        timeout: "You ran out of time."
+        question: "Amaretti are macaroons flavored with a paste made from the bitter type of these nuts",
+        answers: ["What is almonds?", "What is pecans?", "What is walnuts?", "What is cashews?"],
+        theanswer: "What is almonds?"
     },
     {
-        question: "q2",
-        answers: ["Answer 2.1", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
-        theanswer: "Answer 2.1",
+        question: "The first new variety of Eggo waffle Kellogg's made was one with this fruit in 1972",
+        answers: ["What is blueberries?", "What is strawberries?", "What is apples?", "What is bananas?"],
+        theanswer: "What is blueberries?",
     },
     {
-        question: "q3",
-        answers: ["Answer 3.1", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
-        theanswer: "Answer 3.3",
+        question: "Nova is a cold-smoked type of this fish originally from Nova Scotia",
+        answers: ["What is salmon?", "What is swordfish?", "What is snapper?", "What is tuna?"],
+        theanswer: "What is salmon?",
     },
     {
-        question: "q4",
-        answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.2",
+        question: "Cannoli pastries are often filled with this soft cheese found in lasagna",
+        answers: ["What is ricotta?", "What is mozzarella?", "What is gorgonzola?", "What is burrata?"],
+        theanswer: "What is ricotta?",
     },
     {
-        question: "q5",
-        answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.4",
+        question: 'In the early 1900s this fast food was sometimes called "Coney Island Chicken"',
+        answers: ["What is a hot dog?", "What is a hamburger?", "What is french fries?", "What is chicken wings?"],
+        theanswer: "What is a hot dog?",
     }
 	];
 
 	var c5 = [{
-        question: "What is the weather like today?",
-        answers: ["eek", "Sunny", "Raining", "Windy"],
-        theanswer: "eek",
+        question: "Buster Douglas' 1990 knockout of this champ has been called the greatest heavyweight title upset",
+        answers: ["Who is Mike Tyson?", "Who is Floyd Mayweather?", "Who is Oscar De La Hoya?", "Who is Roy Jones Jr.?"],
+        theanswer: "Who is Mike Tyson?",
     },
     {
-        question: "Question2",
-        answers: ["Aarggg", "Answer 2.2", "Answer 2.3", "Answer 2.4"],
-        theanswer: "Answer 2.3",
+        question: "A little birdie told us an eagle is a score this many under par on one hole",
+        answers: ["What is 2?", "What is 1?", "What is 3?", "What is 0?"],
+        theanswer: "What is 2?",
     },
     {
-        question: "Question3",
-        answers: ["arst", "Answer 3.2", "Answer 3.3", "Answer 3.4"],
-        theanswer: "arst",
+        question: "In 2005 Larry Fitzgerald caught 103 passes, including 10 TDs, for this team",
+        answers: ["What is the Arizona Cardinals?", "What is the Dallas Cowboys?", "What is the Philadelphia Eagles?", "What is the Green Bay Packers?"],
+        theanswer: "What is the Arizona Cardinals?",
     },
     {
-        question: "Question1",
-        answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.3",
+        question: 'Co-captains of the 1992 Olympic basketball "Dream Team" were Magic Johnson & this Celtics star',
+        answers: ["Who is Larry Bird?", "Who is Michael Jordan?", "Who is Karl Malone?", "Who is John Stockton?"],
+        theanswer: "Who is Larry Bird?",
     },
     {
-        question: "Question1",
-        answers: ["Answer 4.1", "Answer 4.2", "Answer 4.3", "Answer 4.4"],
-        theanswer: "Answer 4.3",
+        question: "Since 1986, reaching the quarterfinals of this event has entitled you to free tickets & free tea for life",
+        answers: ["What is Wimbledon?", "What is The Masters?", "What is The Grand National?", "What is the World Series?"],
+        theanswer: "What is Wimbledon?",
     }
 	];
 

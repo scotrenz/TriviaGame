@@ -16,12 +16,79 @@
 
 /*Body*/
 body.page-0 {
-	background: url("../images/jeopardy.png") no-repeat center center fixed;
+	background: url("../images/jeopardy.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	margin: 0;
+  	overflow: hidden;
+	}
 }
+
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+/*Start Game Button*/
+#button {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	position: absolute;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	padding: 7px 20px;
+	left: 50%;
+	width: 200px;
+	margin-left: -100px;
+	top: 60%;
+	border-radius: 10px;
+	color: white;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+	border: 5px solid transparent;
+	border-bottom-color: rgba(0,0,0,0.35);
+	background: hsla(260, 100%, 50%, 1);
+	cursor: pointer;
+	outline: 0 !important;
+	animation: pulse 1s infinite alternate;
+	transition: background 0.4s, border 0.2s, margin 0.2s;
+}
+
+#button:hover {
+	background: hsla(22, 100%, 60%, 1);
+	margin-top: -1px;
+	animation: none;
+}
+
+#button:active {
+	border-bottom-width: 0;
+	margin-top: 5px;
+}
+
+@keyframes pulse {
+	0% {
+		margin-top: 0px;
+	}
+	100% {
+		margin-top: 6px; 
+	} 
+}
+
+
 
 body.page-1 {
 	background-color: #070cec;
@@ -45,9 +112,10 @@ div.dollar div.cell {
 	font-size: 3.5rem;
 	text-align: center;
 	vertical-align: middle;
+	text-transform: uppercase;
 	color: #d5a04f;
 	height: 6.5rem;
-	text-shadow: 5px 5px black;
+	text-shadow: 4px 4px black;
 	cursor: pointer; 
 	cursor: hand; 
 }
@@ -69,11 +137,11 @@ div.dollar div.cell:hover {
 button {
 	display: block;
 	text-transform: uppercase;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	background-color: #070cec;
 	border: none;
 	color: white;
-	text-shadow: 5px 5px black;
+	text-shadow: 4px 4px black;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -118,8 +186,8 @@ button:hover {
  /*Header*/
 #header {
 	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	text-shadow: 5px 5px black;
+	letter-spacing: 1.4px;
+	text-shadow: 4px 4px black;
 }
 
 /*Wincount*/
@@ -128,4 +196,5 @@ button:hover {
 	color: white;
 	text-align: center;
 	font-size: 3rem;
+	text-shadow: 4px 4px black;
 }
