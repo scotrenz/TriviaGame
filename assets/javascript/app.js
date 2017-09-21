@@ -7,7 +7,7 @@ $(document).ready(function () {
     var audio = new Audio('../TriviaGame/assets/sounds/times-up.mp3');
 
     // Create array for question categories
-    var category = ["The Movies", "Capitals", "History", "Food", "Sports"];
+    var category = ["Movies", "Capitals", "History", "Food", "Sports"];
 
 	// Array with all the questions and answers
 	var c1 = [{
@@ -149,7 +149,7 @@ $(document).ready(function () {
         [200, 400, 600, 800, 1000]
     ];
 
-    // Shuffle the word list using the Fisher Yates Shuffle method
+    // Shuffle the answers using the Fisher Yates Shuffle method
     Array.prototype.shuffle = function(){
         var i = this.length, j, temp;
         while(--i > 0){
@@ -163,7 +163,7 @@ $(document).ready(function () {
 
     var pcTable = document.getElementById("placecards");
 
-    
+    // Add the header categories
     function header() {
         // Create element for table row and set it equal to variable tr
         var header = document.createElement("div");
@@ -173,8 +173,8 @@ $(document).ready(function () {
             var headerDiv = document.createElement("div")
             headerDiv.appendChild(document.createTextNode(category[i]));
             header.appendChild(headerDiv);
-            header.setAttribute("class", "row");
             header.setAttribute("id", "header");
+            header.setAttribute("class", "row");
             headerDiv.setAttribute("class", "col");
         }
         // Add header to page
@@ -304,38 +304,36 @@ $(document).ready(function () {
 
                     // Add the wincount to the page
                     document.getElementById("wincount").innerHTML = "Score: $" + wincount;
-
-                    console.log(element);
-
                     
                     // Add the win to the page
-                    cellDiv.innerHTML = check + " is correct!";
+                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + check + " is correct!";
                     
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                    }, 1000);
+                    }, 3000);
 
                 } else {
-                    cellDiv.innerHTML = "I'm sorry " + playerAnswer + " is incorrect.";
+                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry " + playerAnswer + " is incorrect.";
+
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                    }, 1000);
+                    }, 3000);
                 }
 
             });
 
             // If the player takes too long, tell player the right answer and go back to game board
             setTimeout(function() {   
-                element.innerHTML = "Time's Up! The correct answer is " + check;
-                var teststring = "Time's Up! The correct answer is " + check;
-                
+                element.innerHTML = "<br>" + "<br>" + "<br>" + "Time's Up! The correct answer is " + check;
+                var text = $("div.cell").text();
+
                 // Play times up sound only when the Time's Up message is shown
-                if ($("div.cell").text().indexOf(teststring) > -1)
-                {
+                if (text.includes("Time's Up! The correct answer is ")) {
                     audio.play();
                 }
+
             }, 15000);
 
             setTimeout(function() {

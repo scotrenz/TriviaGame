@@ -23,27 +23,7 @@ body.page-0 {
 	background-size: cover;
 	margin: 0;
   	overflow: hidden;
-	}
 }
-
-
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-@-ms-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-
 
 /*Start Game Button*/
 #button {
@@ -55,9 +35,8 @@ body.page-0 {
 	left: 50%;
 	width: 200px;
 	margin-left: -100px;
-	top: 60%;
+	top: 75%;
 	border-radius: 10px;
-	color: white;
 	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
 	border: 5px solid transparent;
 	border-bottom-color: rgba(0,0,0,0.35);
@@ -74,6 +53,10 @@ body.page-0 {
 	animation: none;
 }
 
+#button a {
+	color: #fff;
+}
+
 #button:active {
 	border-bottom-width: 0;
 	margin-top: 5px;
@@ -87,8 +70,6 @@ body.page-0 {
 		margin-top: 6px; 
 	} 
 }
-
-
 
 body.page-1 {
 	background-color: #070cec;
@@ -166,7 +147,10 @@ button:hover {
 /*Full Screen*/
 .fullscreen{
     z-index: 9999; 
-    position: fixed; 
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-y:scroll;
     color: white;
     font-size: 5rem;
     text-align: center;
