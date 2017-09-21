@@ -295,12 +295,10 @@ $(document).ready(function () {
                 // Set variable for player's answer
                 var playerAnswer = $(this).text();
 
-
-
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
                     var value = parseInt($("div.cell").text().slice(1));
-                    console.log(value);
+
                     // Up the wincount
                     wincount += value;
 
