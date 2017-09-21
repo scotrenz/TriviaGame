@@ -295,6 +295,8 @@ $(document).ready(function () {
                 // Set variable for player's answer
                 var playerAnswer = $(this).text();
 
+
+
                 // If the answer equal the player's choice
                 if (check === playerAnswer) {
                     var value = parseInt($("div.cell").text().slice(1));
@@ -305,8 +307,11 @@ $(document).ready(function () {
                     // Add the wincount to the page
                     document.getElementById("wincount").innerHTML = "Score: $" + wincount;
                     
-                    // Add the win to the page
-                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + check + " is correct!";
+                    // Remove the question mark when putting the answer for the player
+                    var splicecheck = check.slice(0,-1);
+
+                    // Add the win to the page                    
+                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + splicecheck + " is correct!";
 
                     var none = null;
                     var clips = [
@@ -329,16 +334,17 @@ $(document).ready(function () {
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                    }, 3000);
+                    }, 2000);
 
                 } else {
-                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry " + playerAnswer + " is incorrect.";
+
+                    var spliceAnswer = playerAnswer.slice(0,-1);
+                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry " + spliceAnswer + " is incorrect.";
                     
                     var none = null;
                     var clips = [
                         new Audio("assets/sounds/no.mp3"),
-                        new Audio("assets/sounds/nope.mp3"),
-                        new Audio("assets/sounds/incorrect.mp3"),
+                        new Audio("assets/sounds/nope.mp3")
                     ];
 
                     function playSound() {
@@ -354,7 +360,7 @@ $(document).ready(function () {
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
-                    }, 3000);
+                    }, 2000);
                 }
 
             });
