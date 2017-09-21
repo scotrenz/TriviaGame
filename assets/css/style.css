@@ -25,7 +25,76 @@ body.page-0 {
   	overflow: hidden;
 }
 
+
+
 /*Start Game Button*/
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
 #button {
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 	position: absolute;
@@ -45,12 +114,17 @@ body.page-0 {
 	outline: 0 !important;
 	animation: pulse 1s infinite alternate;
 	transition: background 0.4s, border 0.2s, margin 0.2s;
+
 }
 
 #button:hover {
 	background: hsla(22, 100%, 60%, 1);
 	margin-top: -1px;
 	animation: none;
+	-webkit-animation: swing 1s ease;
+	animation: swing 1s ease;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
 }
 
 #button a {
@@ -142,6 +216,10 @@ button:hover {
 	font-size: 3rem;
 	text-transform: uppercase;
 	font-family: SD Jeopardy Regular;
+}
+
+div > div.fullscreen {
+	transition:all 0.4s ease;
 }
 
 /*Full Screen*/

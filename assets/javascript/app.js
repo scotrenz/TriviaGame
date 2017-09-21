@@ -307,7 +307,25 @@ $(document).ready(function () {
                     
                     // Add the win to the page
                     cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + check + " is correct!";
-                    
+
+                    var none = null;
+                    var clips = [
+                        new Audio("assets/sounds/correct.mp3"),
+                        new Audio("assets/sounds/thatstheone.mp3"),
+                        new Audio("assets/sounds/yes.mp3"),
+                        new Audio("assets/sounds/good.mp3")
+                    ];
+
+                    function playSound() {
+                        if (null !== none) {
+                            clips[none].pause();
+                        }
+
+                        none = Math.floor((Math.random() * 1000) % 3);
+                        clips[none].play();
+                    }
+                    playSound();
+
                     // Timeout back to original placecard page
                     setTimeout(function() {
                         $(element).replaceWith("<div class='cell'></div>");
@@ -315,6 +333,23 @@ $(document).ready(function () {
 
                 } else {
                     cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry " + playerAnswer + " is incorrect.";
+                    
+                    var none = null;
+                    var clips = [
+                        new Audio("assets/sounds/no.mp3"),
+                        new Audio("assets/sounds/nope.mp3"),
+                        new Audio("assets/sounds/incorrect.mp3"),
+                    ];
+
+                    function playSound() {
+                        if (null !== none) {
+                            clips[none].pause();
+                        }
+
+                        none = Math.floor((Math.random() * 1000) % 3);
+                        clips[none].play();
+                    }
+                    playSound();
 
                     // Timeout back to original placecard page
                     setTimeout(function() {
