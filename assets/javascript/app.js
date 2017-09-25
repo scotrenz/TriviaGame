@@ -350,7 +350,7 @@ $(document).ready(function () {
                             clips[none].pause();
                         }
 
-                        none = Math.floor((Math.random() * 1000) % 3);
+                        none = Math.floor((Math.random() * 1000) % 2);
                         clips[none].play();
                     }
                     playSound();
