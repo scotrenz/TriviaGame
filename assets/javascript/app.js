@@ -285,7 +285,10 @@ $(document).ready(function () {
             var cellcheck = "[" + cell + "]";
 
             // Get the answer of the question
-            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer");       
+            var check = eval("c" + cat + "[" + cell + "]" + ".theanswer");
+
+            // Remove the question mark when putting the answer for the player
+            var splicecheck = check.slice(0,-1);       
 
             function winorlose() {
             $("button").on("click", function() {
@@ -305,8 +308,6 @@ $(document).ready(function () {
                     // Add the wincount to the page
                     document.getElementById("wincount").innerHTML = "Score: $" + wincount;
                     
-                    // Remove the question mark when putting the answer for the player
-                    var splicecheck = check.slice(0,-1);
 
                     // Add the win to the page                    
                     cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + splicecheck + " is correct!";
