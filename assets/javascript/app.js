@@ -337,7 +337,7 @@ $(document).ready(function () {
                 } else {
 
                     var spliceAnswer = playerAnswer.slice(0,-1);
-                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry " + spliceAnswer + " is incorrect.";
+                    cellDiv.innerHTML = "<br>" + "<br>" + "<br>" + "I'm sorry that is incorrect. " + splicecheck + " is the correct answer.";
                     
                     var none = null;
                     var clips = [
